@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<ruleset name="Holyhi">
+	<description>A custom coding standard for Holyhi.</description>
+
+	<!-- 禁止文件头带有BOM声明 -->
+	<rule ref="Generic.Files.ByteOrderMark"/>
+
+	<!-- 纯PHP文件禁用关闭标签 -->
+	<rule ref="PSR2.Files.ClosingTag"/>
+
+	<!-- 文件使用 Unix 换行符 \n -->
+	<rule ref="Generic.Files.LineEndings">
+		<properties>
+			<property name="eolChar" value="\n"/>
+		</properties>
+	</rule>
+
+	<!-- 文件行长度限制 -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="160"/>
+            <property name="absoluteLineLimit" value="160"/>
+        </properties>
+    </rule>
+
+	<!-- 禁用短打开标签: <? ?> -->
+	<rule ref="Generic.PHP.DisallowShortOpenTag"/>
+
+	<!-- 禁用废弃方法 -->
+	<rule ref="Generic.PHP.DeprecatedFunctions"/>
+
+	<!-- PHP关键字必须小写 echo / include 等 -->
+	<rule ref="Generic.PHP.LowerCaseKeyword"/>
+	<rule ref="Generic.PHP.LowerCaseConstant"/>
+
+	<!-- 使用Tab缩进 -->
+	<!-- <rule ref="Generic.WhiteSpace.DisallowSpaceIndent"/> -->
+	<!-- 使用空格缩进 -->
+	<rule ref="Generic.WhiteSpace.DisallowTabIndent"/>
+	<rule ref="Generic.WhiteSpace.ScopeIndent"/>
+
+	<!-- 方法前后需要留一个空行 -->
+	<!-- <rule ref="Squiz.WhiteSpace.FunctionSpacing"/> -->
+
+	<!-- 成员变量之间需要相隔一个空行 -->
+	<rule ref="Squiz.WhiteSpace.MemberVarSpacing">
+		<properties>
+			<property name="spacing" value="1" />
+			<!-- 第一个成员变量之前不需要空行 -->
+			<property name="spacingBeforeFirst" value="0" />
+		</properties>
+	</rule>
+
+	<!-- 语法结构与内容之间保持一个空格
+		echo, print, return, include, include_once, require, require_once, new-->
+	<rule ref="Squiz.WhiteSpace.LanguageConstructSpacing"/>
+
+	<!-- 逻辑操作符前后空格 -->
+	<rule ref="Squiz.WhiteSpace.LogicalOperatorSpacing"/>
+
+	<!-- 对齐关闭括号 -->
+	<rule ref="Squiz.WhiteSpace.ScopeClosingBrace"/>
+
+	<!-- 作用域关键字之后空格 (如: static, public, private) -->
+	<rule ref="Squiz.WhiteSpace.ScopeKeywordSpacing"/>
+
+	<!-- 分号前不可有空格 -->
+	<rule ref="Squiz.WhiteSpace.SemicolonSpacing"/>
+
+	<rule ref="Squiz.WhiteSpace.CastSpacing"/>
+
+	<!-- 操作符前后空格 -->
+	<rule ref="Squiz.WhiteSpace.OperatorSpacing">
+		<properties>
+			<!-- 是否忽略换行 -->
+			<property name="ignoreNewlines" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- 操作符格式 -->
+	<!-- <rule ref="Squiz.Formatting.OperatorBracket"/> -->
+
+	<!-- 规范构造方法命名: __constructor -->
+	<rule ref="Generic.NamingConventions.ConstructorName"/>
+
+	<!-- 常量命名必须使用大写+下划线形式 -->
+	<rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
+
+	<!-- 方法使用驼峰式命名 -->
+	<rule ref="Generic.NamingConventions.CamelCapsFunctionName"/>
+
+	<!-- 严格的方法命名 -->
+	<rule ref="Squiz.NamingConventions.ValidFunctionName"/>
+
+	<!-- 严格的变量命名 -->
+	<!-- <rule ref="Squiz.NamingConventions.ValidVariableName"/> -->
+
+	<!-- 禁用行内控制结构 -->
+	<!-- <rule ref="Generic.ControlStructures.InlineControlStructure"/> -->
+
+	<!-- 验证条件语句 -->
+	<rule ref="Squiz.ControlStructures.ControlSignature">
+		<properties>
+			<property name="requiredSpacesBeforeColon" value="0"/>
+		</properties>
+	</rule>
+
+	<!-- 行内if结构 -->
+    <rule ref="Squiz.ControlStructures.InlineIfDeclaration">
+        <exclude name="Squiz.ControlStructures.InlineIfDeclaration.NoBrackets" />
+    </rule>
+
+	<!-- 禁用 elseif 应使用 else if -->
+	<rule ref="Squiz.ControlStructures.ElseIfDeclaration"/>
+
+	<!-- 严格的 switch 结构 (必须包含 default) -->
+	<rule ref="Squiz.ControlStructures.SwitchDeclaration">
+		<properties>
+			<!-- 缩进量: 使用tab时为1, 使用空格缩进时为2/4 -->
+			<property name="indent" value="4"/>
+		</properties>
+	</rule>
+
+	<!-- foreach 结构 -->
+    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration">
+		<properties>
+			<property name="requiredSpacesAfterOpen" value="0"/>
+			<property name="requiredSpacesBeforeClose" value="0"/>
+		</properties>
+	</rule>
+
+	<!-- for 结构 -->
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration">
+		<properties>
+			<property name="requiredSpacesAfterOpen" value="0"/>
+			<property name="requiredSpacesBeforeClose" value="0"/>
+		</properties>
+	</rule>
+
+	<!-- 操作符 -->
+	<rule ref="Squiz.Operators.IncrementDecrementUsage"/>
+
+	<!-- 逻辑操作符 || && -->
+	<rule ref="Squiz.Operators.ValidLogicalOperators"/>
+
+	<!-- 禁止echo关键字被当作方法使用,如: echo("string") -->
+	<rule ref="Squiz.Strings.EchoedStrings"/>
+
+	<!-- 禁止一般字符串使用双引号 (转义字符除外, 如: "NewLine\n") -->
+	<rule ref="Squiz.Strings.DoubleQuoteUsage"/>
+
+	<!-- 禁止字符串连接之间添加不必要的空白 -->
+	<rule ref="Squiz.Strings.ConcatenationSpacing">
+		<properties>
+			<!-- 字符串连接之间空格数量 -->
+			<property name="spacing" value="1"/>
+			<!-- 是否忽略换行 -->
+			<property name="ignoreNewlines" value="true"/>
+		</properties>
+	</rule>
+
+	<!-- 数组缩进 -->
+	<rule ref="Generic.Arrays.ArrayIndent">
+		<properties>
+			<!-- 缩进量: 使用tab时为1, 使用空格缩进时为2/4 -->
+			<property name="indent" value="4"/>
+		</properties>
+	</rule>
+
+	<!-- 禁用短数组声明: [] -->
+	<!-- <rule ref="Generic.Arrays.DisallowShortArraySyntax"/> -->
+	<!-- 禁用长数组声明: array() -->
+	<rule ref="Generic.Arrays.DisallowLongArraySyntax"/>
+
+	<!-- 禁止数组方括号内空格 -->
+	<rule ref="Squiz.Arrays.ArrayBracketSpacing"/>
+
+	<!-- PSR2 命名空间规范 -->
+	<rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
+	<rule ref="PSR2.Namespaces.UseDeclaration"/>
+
+    <!-- Class 规范 -->
+	<rule ref="Squiz.Classes.ClassDeclaration">
+        <!-- 不强制要求必须要命名空间 -->
+        <exclude name="Squiz.Classes.ClassDeclaration.MissingNamespace" />
+    </rule>
+	<!-- 检查重复定义成员属性 -->
+	<rule ref="Squiz.Classes.DuplicateProperty"/>
+
+	<!-- 检查self引用成员变量/方法 -->
+	<rule ref="Squiz.Classes.SelfMemberReference"/>
+
+	<!-- 类名与文件名一致 -->
+	<!-- <rule ref="Squiz.Classes.ValidClassName"/> -->
+
+	<!-- 方法声明 -->
+	<!-- <rule ref="Squiz.Functions.FunctionDeclaration"/> -->
+
+	<!-- 方法声明中禁止重复参数 -->
+	<rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
+
+	<!-- 方法参数必须使用空格分隔 -->
+	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
+
+	<!-- 多行方法声明 -->
+	<rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
+
+	<!-- 成员方法修饰符 -->
+	<rule ref="Squiz.Scope.MethodScope"/>
+
+	<!-- 检查self引用成员变量/方法 -->
+	<rule ref="PSR2.Methods.FunctionCallSignature"/>
+
+	<!-- 方法必须添加注释 -->
+	<rule ref="PEAR.Commenting.FunctionComment">
+        <!-- 不强制要求给每个参数添加说明 -->
+        <exclude name="PEAR.Commenting.FunctionComment.MissingParamComment" />
+    </rule>
+
+	<!-- 如果方法内抛出异常，需要在注释使用@throws说明 -->
+	<rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
+
+	<!-- 变量必须添加注释 -->
+	<!-- <rule ref="Squiz.Commenting.VariableComment"/> -->
+
+	<!-- 成员变量修饰符 -->
+	<rule ref="Squiz.Scope.MemberVarScope"/>
+
+	<!-- 禁止静态方法中使用$this -->
+	<rule ref="Squiz.Scope.StaticThisUsage"/>
+
+	<!-- 实例化对象规范(new Object必须赋值给变量再使用) -->
+	<!-- <rule ref="Squiz.Objects.ObjectInstantiation"/> -->
+
+	<!-- 变量及方法命名必须是正确英文单词 -->
+	<rule ref="Holyhi.NamingConventions.NamingSpellingCheck">
+		<properties>
+			<!-- The common abbreviation in development -->
+			<property name="includes" type="array">
+				<element value="addr" key="address"/>
+				<element value="acct" key="account"/>
+				<element value="acctg" key="accounting"/>
+				<element value="api" key="API"/>
+				<element value="amt" key="amount"/>
+				<element value="asm" key="assemble"/>
+				<element value="arg" key="argument"/>
+				<element value="args" key="arguments"/>
+				<element value="argv" key="argument value"/>
+				<element value="avg" key="average"/>
+				<element value="autoloader" key="auto loader"/>
+				<element value="autoloaders" key="auto loaders"/>
+				<element value="btn" key="button"/>
+				<element value="bal" key="balance"/>
+				<element value="bmp" key="bitmap"/>
+				<element value="buf" key="buffer"/>
+				<element value="cal" key="calendar"/>
+				<element value="catg" key="category"/>
+				<element value="calc" key="calculate"/>
+				<element value="chg" key="change"/>
+				<element value="clk" key="click"/>
+				<element value="cmd" key="command"/>
+				<element value="cmp" key="compare"/>
+				<element value="col" key="column"/>
+				<element value="const" key="constant"/>
+				<element value="config" key="configure"/>
+				<element value="configs" key="configures"/>
+				<element value="cpy" key="copy"/>
+				<element value="ctl" key="control"/>
+				<element value="cntl" key="control"/>
+				<element value="cnv" key="convert"/>
+				<element value="cur" key="current"/>
+				<element value="dbg" key="debug"/>
+				<element value="dbl" key="double"/>
+				<element value="def" key="default"/>
+				<element value="del" key="delete"/>
+				<element value="desc" key="description"/>
+				<element value="dev" key="device / devel"/>
+				<element value="disp" key="display"/>
+				<element value="di" key="dependency injection"/>
+				<element value="dict" key="dictionary"/>
+				<element value="dlg" key="dialog"/>
+				<element value="diy" key="do it yourself"/>
+				<element value="dyn" key="dynamic"/>
+				<element value="dync" key="dynamic"/>
+				<element value="dont" key="don't"/>
+				<element value="env" key="environment"/>
+				<element value="exe" key="execute"/>
+				<element value="exec" key="execute"/>
+				<element value="fn" key="function"/>
+				<element value="func" key="function"/>
+				<element value="filename" key="file name"/>
+				<element value="grp" key="group"/>
+				<element value="http" key="HTTP"/>
+				<element value="https" key="HTTPS"/>
+				<element value="ssl" key="SSL"/>
+				<element value="csrf" key="CSRF"/>
+				<element value="xsrf" key="XSRF"/>
+				<element value="idx" key="index"/>
+				<element value="img" key="image"/>
+				<element value="impl" key="implement"/>
+				<element value="int" key="integer"/>
+				<element value="info" key="information"/>
+				<element value="infos" key="informations"/>
+				<element value="jwt" key="JSON Web Tokens"/>
+				<element value="lnk" key="link"/>
+				<element value="lookup" key="lookup"/>
+				<element value="mem" key="memory"/>
+				<element value="msg" key="message"/>
+				<element value="middleware" key="middleware"/>
+				<element value="mul" key="multi"/>
+				<element value="num" key="number"/>
+				<element value="namespace" key="name space"/>
+				<element value="obj" key="object"/>
+				<element value="php" key="PHP"/>
+				<element value="phpcs" key="PHP Code Sniffer"/>
+				<element value="pic" key="picture"/>
+				<element value="pkg" key="package"/>
+				<element value="ptr" key="pointer"/>
+				<element value="prev" key="previous"/>
+				<element value="param" key="parameter"/>
+				<element value="params" key="parameters"/>
+				<element value="reg" key="register"/>
+				<element value="req" key="request"/>
+				<element value="res" key="resource"/>
+				<element value="qty" key="quantity"/>
+				<element value="sec" key="second"/>
+				<element value="scr" key="screen"/>
+				<element value="src" key="source"/>
+				<element value="str" key="string"/>
+				<element value="sys" key="system"/>
+				<element value="tbl" key="table"/>
+				<element value="tmp" key="temporay"/>
+				<element value="txt" key="text"/>
+				<element value="timestamp" key="timestamp" />
+				<element value="un" key="un"/>
+				<element value="util" key="utility"/>
+				<element value="utils" key="utilites"/>
+				<element value="url" key="Uniform Resource Locator"/>
+				<element value="uri" key="Uniform Resource Identifier"/>
+				<element value="var" key="variable"/>
+				<element value="ver" key="version"/>
+				<element value="fillable" key="fillable"/>
+                <element value="signup" key="signup" />
+                <element value="login" key="login" />
+                <element value="logout" key="logout" />
+				<element value="seeder" key="seeder"/>
+				<element value="seeders" key="seeders"/>
+				<element value="validator" key="validator"/>
+			</property>
+			<property name="excludes" type="array" value=""/>
+		</properties>
+	</rule>
+</ruleset>
