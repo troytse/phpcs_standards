@@ -345,6 +345,8 @@
                 <element value="logout" key="logout" />
 				<element value="seeder" key="seeder"/>
 				<element value="seeders" key="seeders"/>
+				<element value="admin" key="administrator"/>
+				<element value="admins" key="administrators"/>
 				<element value="validator" key="validator"/>
 			</property>
 			<property name="excludes" type="array" value=""/>
