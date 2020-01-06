@@ -200,7 +200,11 @@
 	<rule ref="Squiz.Functions.FunctionDuplicateArgument"/>
 
 	<!-- 方法参数必须使用空格分隔 -->
-	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing"/>
+	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+        <properties>
+            <property name="equalsSpacing" value="1"/>
+        </properties>
+    </rule>
 
 	<!-- 多行方法声明 -->
 	<rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
