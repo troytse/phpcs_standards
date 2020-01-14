@@ -311,7 +311,8 @@
 				<element value="mem" key="memory"/>
 				<element value="msg" key="message"/>
 				<element value="middleware" key="middleware"/>
-				<element value="mul" key="multi"/>
+				<element value="mul" key="multiple"/>
+				<element value="multi" key="multiple"/>
 				<element value="num" key="number"/>
 				<element value="namespace" key="name space"/>
 				<element value="obj" key="object"/>
@@ -341,6 +342,7 @@
 				<element value="utils" key="utilites"/>
 				<element value="url" key="Uniform Resource Locator"/>
 				<element value="uri" key="Uniform Resource Identifier"/>
+				<element value="username" key="User Name"/>
 				<element value="var" key="variable"/>
 				<element value="ver" key="version"/>
 				<element value="fillable" key="fillable"/>
