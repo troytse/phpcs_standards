@@ -259,6 +259,7 @@
 				<element value="buf" key="buffer"/>
 				<element value="cal" key="calendar"/>
 				<element value="catg" key="category"/>
+                <element value="captcha" key="captcha"/>
 				<element value="calc" key="calculate"/>
 				<element value="chg" key="change"/>
 				<element value="clk" key="click"/>
