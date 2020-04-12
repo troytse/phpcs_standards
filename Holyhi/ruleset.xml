@@ -16,12 +16,12 @@
 	</rule>
 
 	<!-- 文件行长度限制 -->
-    <rule ref="Generic.Files.LineLength">
-        <properties>
-            <property name="lineLimit" value="160"/>
-            <property name="absoluteLineLimit" value="160"/>
-        </properties>
-    </rule>
+	<rule ref="Generic.Files.LineLength">
+		<properties>
+			<property name="lineLimit" value="160"/>
+			<property name="absoluteLineLimit" value="160"/>
+		</properties>
+	</rule>
 
 	<!-- 禁用短打开标签: <? ?> -->
 	<rule ref="Generic.PHP.DisallowShortOpenTag"/>
@@ -106,9 +106,9 @@
 	</rule>
 
 	<!-- 行内if结构 -->
-    <rule ref="Squiz.ControlStructures.InlineIfDeclaration">
-        <exclude name="Squiz.ControlStructures.InlineIfDeclaration.NoBrackets" />
-    </rule>
+	<rule ref="Squiz.ControlStructures.InlineIfDeclaration">
+		<exclude name="Squiz.ControlStructures.InlineIfDeclaration.NoBrackets" />
+	</rule>
 
 	<!-- 禁用 elseif 应使用 else if -->
 	<rule ref="Squiz.ControlStructures.ElseIfDeclaration"/>
@@ -122,7 +122,7 @@
 	</rule>
 
 	<!-- foreach 结构 -->
-    <rule ref="Squiz.ControlStructures.ForEachLoopDeclaration">
+	<rule ref="Squiz.ControlStructures.ForEachLoopDeclaration">
 		<properties>
 			<property name="requiredSpacesAfterOpen" value="0"/>
 			<property name="requiredSpacesBeforeClose" value="0"/>
@@ -130,7 +130,7 @@
 	</rule>
 
 	<!-- for 结构 -->
-    <rule ref="Squiz.ControlStructures.ForLoopDeclaration">
+	<rule ref="Squiz.ControlStructures.ForLoopDeclaration">
 		<properties>
 			<property name="requiredSpacesAfterOpen" value="0"/>
 			<property name="requiredSpacesBeforeClose" value="0"/>
@@ -179,11 +179,11 @@
 	<rule ref="PSR2.Namespaces.NamespaceDeclaration"/>
 	<rule ref="PSR2.Namespaces.UseDeclaration"/>
 
-    <!-- Class 规范 -->
+	<!-- Class 规范 -->
 	<rule ref="Squiz.Classes.ClassDeclaration">
-        <!-- 不强制要求必须要命名空间 -->
-        <exclude name="Squiz.Classes.ClassDeclaration.MissingNamespace" />
-    </rule>
+		<!-- 不强制要求必须要命名空间 -->
+		<exclude name="Squiz.Classes.ClassDeclaration.MissingNamespace" />
+	</rule>
 	<!-- 检查重复定义成员属性 -->
 	<rule ref="Squiz.Classes.DuplicateProperty"/>
 
@@ -201,10 +201,10 @@
 
 	<!-- 方法参数必须使用空格分隔 -->
 	<rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
-        <properties>
-            <property name="equalsSpacing" value="1"/>
-        </properties>
-    </rule>
+		<properties>
+			<property name="equalsSpacing" value="1"/>
+		</properties>
+	</rule>
 
 	<!-- 多行方法声明 -->
 	<rule ref="Squiz.Functions.MultiLineFunctionDeclaration"/>
@@ -217,9 +217,9 @@
 
 	<!-- 方法必须添加注释 -->
 	<rule ref="PEAR.Commenting.FunctionComment">
-        <!-- 不强制要求给每个参数添加说明 -->
-        <exclude name="PEAR.Commenting.FunctionComment.MissingParamComment" />
-    </rule>
+		<!-- 不强制要求给每个参数添加说明 -->
+		<exclude name="PEAR.Commenting.FunctionComment.MissingParamComment" />
+	</rule>
 
 	<!-- 如果方法内抛出异常，需要在注释使用@throws说明 -->
 	<rule ref="Squiz.Commenting.FunctionCommentThrowTag"/>
@@ -259,7 +259,7 @@
 				<element value="buf" key="buffer"/>
 				<element value="cal" key="calendar"/>
 				<element value="catg" key="category"/>
-                <element value="captcha" key="captcha"/>
+				<element value="captcha" key="captcha"/>
 				<element value="calc" key="calculate"/>
 				<element value="chg" key="change"/>
 				<element value="clk" key="click"/>
@@ -331,6 +331,7 @@
 				<element value="qty" key="quantity"/>
 				<element value="sec" key="second"/>
 				<element value="scr" key="screen"/>
+				<element value="sql" key="SQL"/>
 				<element value="src" key="source"/>
 				<element value="str" key="string"/>
 				<element value="sys" key="system"/>
@@ -347,9 +348,9 @@
 				<element value="var" key="variable"/>
 				<element value="ver" key="version"/>
 				<element value="fillable" key="fillable"/>
-                <element value="signup" key="signup" />
-                <element value="login" key="login" />
-                <element value="logout" key="logout" />
+				<element value="signup" key="signup" />
+				<element value="login" key="login" />
+				<element value="logout" key="logout" />
 				<element value="seeder" key="seeder"/>
 				<element value="seeders" key="seeders"/>
 				<element value="admin" key="administrator"/>
