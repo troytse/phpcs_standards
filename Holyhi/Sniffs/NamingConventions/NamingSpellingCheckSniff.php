@@ -7,7 +7,7 @@
  * @license   https://github.com/troytse/phpcs_standards/blob/master/licence.txt MIT Licence
  */
 
-namespace PHP_CodeSniffer\Standards\Holyhi\Sniffs\NamingConventions;
+namespace HolyhiCS\Holyhi\Sniffs\NamingConventions;
 
 use PHP_CodeSniffer\Sniffs\Sniff;
 use PHP_CodeSniffer\Util\Tokens;
@@ -106,7 +106,7 @@ class NamingSpellingCheckSniff implements Sniff
             case T_TRAIT:
                 $name = $phpcsFile->getDeclarationName($stackPtr);
                 if ($tokens[$stackPtr]['code'] === T_FUNCTION
-                && $name{0} . $name{1} == '__'
+                && substr($name, 0, 2) == '__'
                 && isset($this->magicMethods[substr($name, 2)])
                 ) {
                     // skip magic methods
@@ -278,7 +278,7 @@ class NamingSpellingCheckSniff implements Sniff
      * @param boolean $ignoreCase [optional]
      * @return array The incorret words
      */
-    protected function spellingCheck($text, $ignoreCase=false)
+    protected function spellingCheck($text, $ignoreCase = false)
     {
         $results = [];
         $length  = strlen($text);
@@ -286,7 +286,7 @@ class NamingSpellingCheckSniff implements Sniff
         if (!$ignoreCase) {
             // use camel-casing splition.
             for ($i = 0; $i < $length; $i++) {
-                $char = ord($text{$i});
+                $char = ord($text[$i]);
                 $word = '';
 
                 if ($char > 64 && $char < 91) {
@@ -296,10 +296,10 @@ class NamingSpellingCheckSniff implements Sniff
                         $buffer = '';
                     }
 
-                    $buffer .= $text{$i};
+                    $buffer .= $text[$i];
                 } else if ($char > 96 && $char < 123) {
                     // Lower case.
-                    $buffer .= $text{$i};
+                    $buffer .= $text[$i];
                 } else if (!empty($buffer)) {
                     // Others char, begin new word.
                     $word   = $buffer;

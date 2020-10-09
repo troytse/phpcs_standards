@@ -1,7 +1,16 @@
 <?xml version="1.0"?>
-<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Holyhi" namespace="HolyhiCS\Holyhi" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Holyhi Coding Standards" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+    <description>The Coding standard for the Holyhi Coding Standards itself.</description>
 
-	<description>Holyhi Coding Standards</description>
+	<file>.</file>
+
+    <arg value="sp"/>
+	<arg name="extensions" value="php"/>
+	<arg name="basepath" value="."/>
+	<arg name="parallel" value="8"/>
+
+	<!-- Exclude Composer vendor directory. -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
 
 	<!-- 禁止文件头带有BOM声明 -->
 	<rule ref="Generic.Files.ByteOrderMark"/>
