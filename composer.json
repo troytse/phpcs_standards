@@ -1,5 +1,5 @@
 {
-	"name": "holyhi/hics",
+	"name": "holyhi/holyhi-code-standard",
 	"type": "phpcodesniffer-standard",
 	"description": "PHP_CodeSniffer rules (sniffs) to enforce Holyhi coding conventions",
 	"keywords": [
