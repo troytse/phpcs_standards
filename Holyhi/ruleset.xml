@@ -307,6 +307,7 @@
 				<element value="int" key="integer"/>
 				<element value="info" key="information"/>
 				<element value="infos" key="informations"/>
+				<element value="inline" key="inline"/>
 				<element value="jwt" key="JSON Web Tokens"/>
 				<element value="lnk" key="link"/>
 				<element value="lookup" key="lookup"/>
