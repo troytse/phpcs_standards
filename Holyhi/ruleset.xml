@@ -257,6 +257,7 @@
 				<element value="btn" key="button"/>
 				<element value="bal" key="balance"/>
 				<element value="bmp" key="bitmap"/>
+				<element value="bool" key="boolean"/>
 				<element value="buf" key="buffer"/>
 				<element value="cal" key="calendar"/>
 				<element value="catg" key="category"/>
