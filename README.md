@@ -1,2 +1,2 @@
 # phpcs_standards
-Some coding standard rules for my personal.
+PHP coding standard rules for Holyhi.
