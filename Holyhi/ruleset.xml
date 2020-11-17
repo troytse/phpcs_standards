@@ -291,6 +291,7 @@
 				<element value="dync" key="dynamic"/>
 				<element value="dont" key="don't"/>
 				<element value="env" key="environment"/>
+				<element value="eval" key="eval"/>
 				<element value="exe" key="execute"/>
 				<element value="exec" key="execute"/>
 				<element value="fn" key="function"/>
